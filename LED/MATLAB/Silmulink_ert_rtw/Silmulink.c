@@ -65,8 +65,7 @@ void Silmulink_step(void)
 }
 
 /* Model initialize function */
-void Silmulink_initialize(void)
-{
+void Silmulink_initialize(void) {
   /* (no initialization code required) */
 }
 
