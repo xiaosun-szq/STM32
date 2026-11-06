@@ -1,0 +1,2 @@
+set "MINGW_ROOT=D:\TDM-GCC-64\bin"
+@set "PATH=%PATH%;%MINGW_ROOT%"

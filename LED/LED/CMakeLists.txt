@@ -36,6 +36,26 @@ add_executable(${CMAKE_PROJECT_NAME})
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
+# ========== 【新增：Simulink ERT 代码目录】 ==========
+set(SILMULINK_RTW_DIR "D:/HuaweiMoveData/Users/Qw011/Desktop/GitHub/STM32/STM32/LED/MATLAB/Silmulink_ert_rtw")
+
+# 1. 添加头文件搜索路径
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+        ${SILMULINK_RTW_DIR}
+        # Add user defined include paths
+)
+
+# 2. 递归收集 ert_rtw 下面所有 .c 源文件
+file(GLOB_RECURSE RTW_SOURCES
+        ${SILMULINK_RTW_DIR}/*.c
+)
+
+# 3. 把源码加入目标
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+        ${RTW_SOURCES}
+        # Add user sources here
+)
+# ====================================================
 
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
