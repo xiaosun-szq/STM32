@@ -24,7 +24,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-uint32_t a = 0;
+uint32_t aaa = 0;
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,8 +101,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     HAL_Delay(1);
-    a = Silmulink_Y.Output;
-    __HAL_TIM_SetCompare(&htim3,TIM_CHANNEL_3,Silmulink_Y.Output);
+
+    __HAL_TIM_SetCompare(&htim3,TIM_CHANNEL_3,Silmulink_B.Led_Output);
 
 
     /* USER CODE BEGIN 3 */
