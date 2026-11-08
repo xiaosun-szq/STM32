@@ -25,6 +25,9 @@
 /* USER CODE BEGIN Includes */
 
 uint32_t aaa = 0;
+real_T arg_Input = 0;   // 输入：PA2电平
+real_T arg_Output = 0;
+real_T arg_Output1 = 0;
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,12 +102,10 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    Silmulink_U.Input = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_2);
+    __HAL_TIM_SetCompare(&htim3,TIM_CHANNEL_3,Silmulink_Y.Output);
     HAL_Delay(1);
-
-    __HAL_TIM_SetCompare(&htim3,TIM_CHANNEL_3,Silmulink_B.Led_Output);
-
-
+    Silmulink_step();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Silmulink'.
  *
- * Model version                  : 1.16
+ * Model version                  : 1.20
  * Simulink Coder version         : 9.9 (R2023a) 19-Nov-2022
- * C/C++ source code generated on : Sat Nov  7 18:50:47 2026
+ * C/C++ source code generated on : Sun Nov  8 20:04:21 2026
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -35,35 +35,43 @@
 #define rtmSetErrorStatus(rtm, val)    ((rtm)->errorStatus = (val))
 #endif
 
-/* Block signals (default storage) */
-typedef struct {
-  real_T Led_Output;                   /* '<Root>/LED_BREATHE' */
-} B_Silmulink_T;
-
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
   uint8_T is_active_c3_Silmulink;      /* '<Root>/LED_BREATHE' */
   uint8_T is_c3_Silmulink;             /* '<Root>/LED_BREATHE' */
+  uint8_T is_A;                        /* '<Root>/LED_BREATHE' */
+  uint8_T is_B;                        /* '<Root>/LED_BREATHE' */
 } DW_Silmulink_T;
+
+/* External inputs (root inport signals with default storage) */
+typedef struct {
+  real_T Input;                        /* '<Root>/Input' */
+} ExtU_Silmulink_T;
+
+/* External outputs (root outports fed by signals with default storage) */
+typedef struct {
+  real_T Output;                       /* '<Root>/Output' */
+  real_T Output1;                      /* '<Root>/Output1' */
+} ExtY_Silmulink_T;
 
 /* Real-time Model Data Structure */
 struct tag_RTM_Silmulink_T {
   const char_T * volatile errorStatus;
 };
 
-/* Block signals (default storage) */
-extern B_Silmulink_T Silmulink_B;
-
 /* Block states (default storage) */
 extern DW_Silmulink_T Silmulink_DW;
 
+/* External inputs (root inport signals with default storage) */
+extern ExtU_Silmulink_T Silmulink_U;
+
+/* External outputs (root outports fed by signals with default storage) */
+extern ExtY_Silmulink_T Silmulink_Y;
+
 /* Model entry point functions */
 extern void Silmulink_initialize(void);
+extern void Silmulink_step(void);
 extern void Silmulink_terminate(void);
-
-/* Customized model step function */
-extern void Silmulink_step(real_T *arg_Output, real_T *arg_Input, real_T
-  *arg_Input1, real_T *arg_Input2, real_T *arg_Output1, real_T *arg_Output2);
 
 /* Real-time Model object */
 extern RT_MODEL_Silmulink_T *const Silmulink_M;
@@ -90,8 +98,6 @@ extern RT_MODEL_Silmulink_T *const Silmulink_M;
  *
  * '<Root>' : 'Silmulink'
  * '<S1>'   : 'Silmulink/LED_BREATHE'
- * '<S2>'   : 'Silmulink/rad_deg'
- * '<S3>'   : 'Silmulink/safeDivide'
  */
 #endif                                 /* RTW_HEADER_Silmulink_h_ */
 

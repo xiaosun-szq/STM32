@@ -2,7 +2,7 @@
 ## Makefile generated for component 'Silmulink'. 
 ## 
 ## Makefile     : Silmulink.mk
-## Generated on : Sat Nov 07 15:48:48 2026
+## Generated on : Sun Nov 08 19:09:23 2026
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/Silmulink.exe
 ## Product type : executable
 ## 
@@ -185,7 +185,7 @@ DEFINES = $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(DEFINES_STAN
 
 SRCS = $(START_DIR)/Silmulink_ert_rtw/Silmulink.c
 
-MAIN_SRC = $(START_DIR)/Silmulink_ert_rtw/ert_main.c
+MAIN_SRC = $(MATLAB_ROOT)/rtw/c/src/common/rt_main.c
 
 ALL_SRCS = $(SRCS) $(MAIN_SRC)
 
@@ -195,7 +195,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 
 OBJS = Silmulink.obj
 
-MAIN_OBJ = ert_main.obj
+MAIN_OBJ = rt_main.obj
 
 ALL_OBJS = $(OBJS) $(MAIN_OBJ)
 
@@ -367,7 +367,7 @@ Silmulink.obj : $(START_DIR)/Silmulink_ert_rtw/Silmulink.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 
-ert_main.obj : $(START_DIR)/Silmulink_ert_rtw/ert_main.c
+rt_main.obj : $(MATLAB_ROOT)/rtw/c/src/common/rt_main.c
 	$(CC) $(CFLAGS) -o "$@" "$<"
 
 

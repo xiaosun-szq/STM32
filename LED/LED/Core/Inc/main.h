@@ -32,6 +32,9 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Silmulink.h"
+  extern real_T arg_Input;   // 输入：PA2电平
+  extern real_T arg_Output;
+  extern real_T arg_Output1;
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
